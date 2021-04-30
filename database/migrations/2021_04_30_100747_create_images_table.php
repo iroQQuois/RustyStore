@@ -17,8 +17,8 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('link', 50)->nullable(false);
-            $table->integer('productId')->nullable(false);
-            $table->foreign('productId')->references('id')->on('products');
+            $table->integer('product_id')->nullable(false);
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

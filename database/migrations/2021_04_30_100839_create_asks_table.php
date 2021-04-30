@@ -17,10 +17,10 @@ class CreateAsksTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('theme', 50)->nullable(false);
-            $table->boolean('orderStatus')->nullable(false);
+            $table->boolean('order_status')->nullable(false);
             $table->string('message')->nullable(false);
             $table->string('email', 50)->nullable(false);
-            $table->string('fullName', 50)->nullable(false);
+            $table->string('full_name', 50)->nullable(false);
         });
     }
 

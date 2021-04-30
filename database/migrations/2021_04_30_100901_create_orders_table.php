@@ -16,16 +16,16 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('fullName', 50)->nullable(false);
-            $table->integer('finalCost')->nullable(false);
+            $table->string('full_name', 50)->nullable(false);
+            $table->integer('final_cost')->nullable(false);
             $table->boolean('delivery')->nullable(false);
-            $table->string('deliveryCountry', 50)->nullable();
-            $table->string('deliveryCity', 50)->nullable();
-            $table->string('deliveryRegion', 50)->nullable();
-            $table->string('deliveryAddress', 50)->nullable();
-            $table->dateTime('deliveryDate')->nullable();
-            $table->string('paymentMethod', 50)->nullable(false);
-            $table->string('productIds', 50)->nullable(false);
+            $table->string('delivery_country', 50)->nullable();
+            $table->string('delivery_city', 50)->nullable();
+            $table->string('delivery_region', 50)->nullable();
+            $table->string('delivery_address', 50)->nullable();
+            $table->dateTime('delivery_date')->nullable();
+            $table->string('payment_method', 50)->nullable(false);
+            $table->string('product_ids', 50)->nullable(false);
         });
     }
 

@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/support', function () {
+Route::get('support', function () {
     return view('support');
 });
+
+Route::get('category/{category}', '\App\Http\Controllers\CategoryController@index'); // TODO fill a database or write seeds
