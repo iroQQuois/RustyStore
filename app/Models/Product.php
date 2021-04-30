@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Product extends Model
 {
@@ -19,29 +19,49 @@ class Product extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'name',
+        'model',
+        'color',
         'description',
-        'price',
-        'sale'
+        'brandId',
+        'categoryId'
     ];
 
     /**
-     * Has many Images
+     * The attributes that should be cast to native types.
      *
-     * @return HasMany
+     * @var array
      */
-    public function comments(): HasMany
+    protected $casts = [
+        'created_at' => 'datetime',
+    ];
+
+    /**
+     * Get the brand of this product.
+     *
+     * @return BelongsTo
+     */
+    public function brand(): BelongsTo
     {
-        return $this->hasMany('App\Image');
+        return $this->belongsTo('App\Brand');
     }
 
     /**
-     * Has one Category
+     * Get the category of this product.
      *
-     * @return HasOne
+     * @return BelongsTo
      */
-    public function category(): HasOne
+    public function category(): BelongsTo
     {
-        return $this->hasOne('App\Category');
+        return $this->belongsTo('App\Category');
+    }
+
+    /**
+     * Get all images of this product
+     *
+     * @return HasMany
+     */
+    public function images(): HasMany
+    {
+        return $this->hasMany('App\Image');
     }
 }

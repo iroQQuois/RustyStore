@@ -18,9 +18,18 @@ class Ask extends Model
      */
     protected $fillable = [
         'theme',
-        'madeAnOrder',
-        'fullName',
+        'orderStatus',
+        'message',
         'email',
-        'message'
+        'fullName'
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'created_at' => 'datetime',
     ];
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
@@ -18,17 +18,25 @@ class Category extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'name',
-        'productId'
+        'category'
     ];
 
     /**
-     * Belong to Product
+     * The attributes that should be cast to native types.
      *
-     * @return BelongsTo
+     * @var array
      */
-    public function product(): BelongsTo
+    protected $casts = [
+        'created_at' => 'datetime',
+    ];
+
+    /**
+     * Get all products
+     *
+     * @return HasMany
+     */
+    public function products(): HasMany
     {
-        return $this->belongsTo('App\Product');
+        return $this->hasMany('App\Product');
     }
 }

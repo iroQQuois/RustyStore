@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Image extends Model
+class Brand extends Model
 {
     use HasFactory;
 
@@ -18,8 +18,7 @@ class Image extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'link',
-        'productId'
+        'brand'
     ];
 
     /**
@@ -31,13 +30,14 @@ class Image extends Model
         'created_at' => 'datetime',
     ];
 
+
     /**
-     * Get the product of this image.
+     * Get all products
      *
-     * @return BelongsTo
+     * @return HasMany
      */
-    public function product(): BelongsTo
+    public function products(): HasMany
     {
-        return $this->belongsTo('App\Product');
+        return $this->hasMany('App\Product');
     }
 }

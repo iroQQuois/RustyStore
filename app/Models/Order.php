@@ -9,9 +9,6 @@ class Order extends Model
 {
     use HasFactory;
 
-    /**
-     * @var string
-     */
     protected $primaryKey = 'id';
 
     /**
@@ -20,7 +17,24 @@ class Order extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'link',
-        'productId'
+        'fullName',
+        'finalCost',
+        'delivery',
+        'deliveryCountry',
+        'deliveryCity',
+        'deliveryRegion',
+        'deliveryAddress',
+        'deliveryDate',
+        'paymentMethod',
+        'productIds'
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'created_at' => 'datetime',
     ];
 }
