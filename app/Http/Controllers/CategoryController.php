@@ -14,13 +14,11 @@ class CategoryController extends Controller
     public function index(string $category): Factory|View|Application
     {
         $categoryId = Category::query()->select('id')->where('category', '=', $category)->get();
-        $categories = Category::query()->find($category);
-        $data = [];
+        $categoryId = json_decode($categoryId, true);
 
-        foreach ($categories->brands as $brand) {
-            array_push($data, $brand);
-        }
+        $brands = Category::find(intval($categoryId[0]['id']));
+        $brands = $brands->brands;
 
-        return view('brands', $data);
+        return view('brands', ['brands' => $brands]);
     }
 }

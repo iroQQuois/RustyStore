@@ -48,6 +48,6 @@ class Category extends Model
      */
     public function brands(): BelongsToMany
     {
-        return $this->belongsToMany('App\Brands');
+        return $this->belongsToMany(Brand::class, 'category_brand');
     }
 }

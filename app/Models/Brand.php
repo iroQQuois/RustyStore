@@ -19,7 +19,8 @@ class Brand extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'brand'
+        'brand',
+        'image'
     ];
 
     /**
@@ -49,6 +50,6 @@ class Brand extends Model
      */
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany('App\Category');
+        return $this->belongsToMany(Category::class, 'category_brand');
     }
 }

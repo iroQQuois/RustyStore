@@ -73,6 +73,12 @@ footer {
     font-size: 0;
 }
 
+.nav__a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .nav__dropdown {
     width: calc(100% / 4 - 1px);
     height: 70px;
@@ -80,6 +86,7 @@ footer {
     color: white;
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
     font-size: 30px;
     padding: 20px 0;
     display: inline-block;
@@ -144,12 +151,12 @@ footer {
 .main__wrapper-img {
     text-align: center;
     display: inline;
-    max-width: 40%;
+    max-width: 50%;
     margin: 15px;
 }
 
 .main__img {
-    max-width: 110%;
+    max-width: 70%;
 }
 
 .main__description {
@@ -187,12 +194,6 @@ footer {
 .item {
     height: 100%;
     display: inline-block;
-}
-
-.nav__a {
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 .halp:hover {

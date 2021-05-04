@@ -7,7 +7,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" >
+    <link rel="stylesheet" type="text/css" href="/css/style.css" >
 </head>
 
 <header class="header__bg">
@@ -18,8 +18,18 @@
     <nav class="nav">
         @include('includes.nav')
     </nav>
-    {{ $data }}
 
+    <div class='main'>
+        <div class='main__wrapper-img'>
+            <h1>Выберите бренд интересующей категории устройств</h1>
+            <br>
+            @foreach ($brands as $brand)
+                <img class="main__img" src="/img/{{ $brand->image }}" alt=""/>
+                <h2><strong>{{ ucfirst($brand->brand) }}</strong></h2>
+                <br />
+            @endforeach
+        </div>
+    </div>
 </body>
 
 <footer>
