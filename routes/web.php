@@ -21,4 +21,6 @@ Route::get('support', function () {
     return view('support');
 });
 
-Route::get('category/{category}', '\App\Http\Controllers\CategoryController@index');
+Route::get('category/{category}', '\App\Http\Controllers\BrandController@index');
+
+Route::get('category/{category}/{brand}', '\App\Http\Controllers\ProductController@index');

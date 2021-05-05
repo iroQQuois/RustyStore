@@ -21,7 +21,7 @@
 
     <div class='main'>
         <div class='main__wrapper-img'>
-            <img class="main__img" src='img/main.jpg'>
+            <img class="main__img" src='img/main.jpg' alt="">
         </div>
         <div class='main__description'>
             RustyStore - один из самых надежных и качественных современных магазинов девайсов.

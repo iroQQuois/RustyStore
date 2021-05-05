@@ -24,8 +24,10 @@
             <h1>Выберите бренд интересующей категории устройств</h1>
             <br>
             @foreach ($brands as $brand)
-                <img class="main__img" src="/img/{{ $brand->image }}" alt=""/>
-                <h2><strong>{{ ucfirst($brand->brand) }}</strong></h2>
+                <a class="nav__a" href="/category/{{ $category }}/{{ $brand->brand }}">
+                    <img class="main__img" src="/img/{{ $brand->image }}" alt=""/>
+                    <h2><strong>{{ ucfirst($brand->brand) }}</strong></h2>
+                </a>
                 <br />
             @endforeach
         </div>

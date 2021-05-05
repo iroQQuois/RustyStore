@@ -189,7 +189,27 @@ footer {
     font-size: 0;
 }
 
+.product {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
 
+.product__wrapper {
+    text-align: center;
+    display: inline;
+    max-width: 90%;
+}
+
+.product__img {
+    max-width: 70%;
+    max-height: 30%;
+}
+
+.product__data {
+    width: 100%;
+}
 
 .item {
     height: 100%;

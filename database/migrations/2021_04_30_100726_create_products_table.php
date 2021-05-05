@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('model', 50)->nullable(false);
             $table->string('color', 50)->nullable();
             $table->string('description')->nullable(false);
+            $table->string('prev_image')->nullable(false);
             $table->integer('brand_id')->nullable(false);
             $table->integer('category_id')->nullable(false);
             $table->foreign('brand_id')->references('id')->on('brands');

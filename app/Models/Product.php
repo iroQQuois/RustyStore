@@ -23,7 +23,8 @@ class Product extends Model
         'color',
         'description',
         'brandId',
-        'categoryId'
+        'categoryId',
+        'prev_image'
     ];
 
     /**
@@ -62,6 +63,6 @@ class Product extends Model
      */
     public function images(): HasMany
     {
-        return $this->hasMany('App\Image');
+        return $this->hasMany(Image::class);
     }
 }
