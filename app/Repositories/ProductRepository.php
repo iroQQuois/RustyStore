@@ -19,11 +19,24 @@ class ProductRepository
     public function getProductsByCategoryAndBrand(
         int $categoryId,
         int $brandId
-    ): string
-    {
+    ): string {
         return Product::query()
             ->where('category_id', '=', $categoryId)
             ->where('brand_id', '=', $brandId)
+            ->get();
+    }
+
+    /**
+     * Return product by id
+     *
+     * @param  int  $productId
+     *
+     * @return string
+     */
+    public function getProductById(int $productId): string
+    {
+        return Product::query()
+            ->where('id', '=', $productId)
             ->get();
     }
 }

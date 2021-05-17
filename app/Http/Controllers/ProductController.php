@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Repositories\BrandRepository;
 use App\Repositories\CategoryRepository;
+use App\Repositories\ImageRepository;
 use App\Repositories\ProductRepository;
 use Illuminate\View\View;
 
@@ -20,6 +20,7 @@ class ProductController extends Controller
     protected CategoryRepository $categoryRepository;
     protected BrandRepository $brandRepository;
     protected ProductRepository $productRepository;
+    protected ImageRepository $imageRepository;
 
     /**
      * Create a new controller instance.
@@ -27,17 +28,19 @@ class ProductController extends Controller
      * @param  CategoryRepository  $categories
      * @param  BrandRepository  $brands
      * @param  ProductRepository  $products
-     * @return void
+     * @param  ImageRepository  $images
      */
     public function __construct(
         CategoryRepository $categories,
         BrandRepository $brands,
-        ProductRepository $products
+        ProductRepository $products,
+        ImageRepository $images
     )
     {
         $this->categoryRepository = $categories;
         $this->brandRepository = $brands;
         $this->productRepository = $products;
+        $this->imageRepository = $images;
     }
 
     /**
@@ -61,5 +64,30 @@ class ProductController extends Controller
             intval($categoryId[0]['id']), intval($brandId[0]['id']));
 
         return view('products', ['products' => $products, 'brand' => $brand]);
+    }
+
+    /**
+     * Action that return view product card
+     *
+     * @param  string  $productId
+     * @param  string  $category
+     * @param  string  $brand
+     *
+     * @return View
+     */
+    public function getProduct(string $category, string $brand, string $productId): View
+    {
+        $product = $this->productRepository->getProductById(intval($productId));
+        $product = json_decode($product, true);
+
+        $imagesForProduct = $this->imageRepository->getImagesByProductId(intval($productId));
+        $imagesForProduct = json_decode($imagesForProduct, true);
+
+        return view('product', [
+            'product' => $product,
+            'category' => $category,
+            'brand' => $brand,
+            'images' => $imagesForProduct
+        ]);
     }
 }

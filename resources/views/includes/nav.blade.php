@@ -17,11 +17,5 @@
 <div class="nav__dropdown"><a class="nav__a" href="/category/notebooks">Ноутбуки</a>
     <div class="nav__dropdown-child">
         <a>В данный момент нет в наличии</a>
-{{--        <a href="MAGAZ/Acer.html">Acer</a>--}}
-{{--        <a href="MAGAZ/Acer.html">Acer</a>--}}
-{{--        <a href="MAGAZ/Xiaomi.html">Xiaomi</a>--}}
     </div>
 </div>
-
-<div class="nav__dropdown"><a class="nav__a" href="/support">Поддержка</a></div>
-

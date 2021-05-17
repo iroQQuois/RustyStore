@@ -35,10 +35,18 @@
                     <br>
                     <strong>Описание: </strong>{{ ucfirst($product['description']) }}
                     <br>
+                    <div>
+                        <a class="nav__a" href="{{ $brand }}/product/{{$product['id'] }}">
+                            <button class="product__button">Посмотреть подробнее</button>
+                        </a>
+                    </div>
                 </div>
             </div>
+            <br>
+            <hr>
+            <br>
         @endforeach
-            <br />
+            <br>
     </div>
 </div>
 </body>
