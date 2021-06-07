@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Collection;
 
 class ProductRepository
 {
@@ -37,6 +38,30 @@ class ProductRepository
     {
         return Product::query()
             ->where('id', '=', $productId)
+            ->get();
+    }
+
+    /**
+     * @param  string  $query
+     *
+     * @return string
+     */
+    public function getProductNameBySearch(string $query): string
+    {
+        return Product::query()
+            ->select('full_title')
+            ->where('full_title', 'like', '%'.$query.'%')
+            ->get();
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductsOrderedById(): string
+    {
+        return Product::query()
+            ->select('full_title')
+            ->orderBy('id', 'desc')
             ->get();
     }
 }

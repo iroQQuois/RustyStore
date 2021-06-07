@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\LiveSearchController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +31,12 @@ Route::get('category/{category}/{brand}', [ProductController::class, 'index']);
 Route::get('category/{category}/{brand}/product/{id}',
            [ProductController::class, 'getProduct']);
 
+Route::get('/liveSearch', [LiveSearchController::class, 'index']);
+Route::get('/liveSearch/action', [LiveSearchController::class, 'action']);
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-

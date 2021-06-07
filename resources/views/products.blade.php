@@ -27,6 +27,9 @@
             <div class="product">
                 <img class="product__img" src="/img/{{ $product['prev_image'] }}" alt=""/>
                 <div class="product__data">
+                    <h1>{{ $product['full_title'] }}</h1>
+                    <br>
+                    <br>
                     <strong>Бренд: </strong>{{ ucfirst($brand) }}
                     <br>
                     <strong>Модель: </strong>{{ ucfirst($product['model']) }}

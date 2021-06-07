@@ -24,7 +24,8 @@ class Product extends Model
         'description',
         'brandId',
         'categoryId',
-        'prev_image'
+        'prev_image',
+        'full_title'
     ];
 
     /**
