@@ -10,14 +10,9 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" >
 </head>
 
-<header class="header__bg">
-    @include('includes.header')
-</header>
+@include('includes.header')
 
 <body>
-<nav class="nav">
-    @include('includes.nav')
-</nav>
 
 <div class='main'>
     <div class='product__wrapper'>
@@ -54,7 +49,7 @@
 </div>
 </body>
 
-<footer>
+
     @include('includes.footer')
-</footer>
+
 </html>

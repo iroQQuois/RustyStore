@@ -10,15 +10,9 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" >
 </head>
 
-<header class="header__bg">
-    @include('includes.header')
-</header>
+@include('includes.header')
 
 <body>
-    <nav class="nav">
-        @include('includes.nav')
-    </nav>
-
     <div class='main'>
         <div class='main__wrapper-img'>
             <h1>Выберите бренд интересующей категории устройств</h1>
@@ -34,7 +28,7 @@
     </div>
 </body>
 
-<footer>
+
     @include('includes.footer')
-</footer>
+
 </html>

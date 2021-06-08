@@ -33,6 +33,13 @@ header {
     display: none;
 }
 
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
 .header__bg {
     background: transparent;
 }

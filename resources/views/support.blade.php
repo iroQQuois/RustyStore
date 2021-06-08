@@ -10,15 +10,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" >
 </head>
 
-<header class="header__bg">
-    @include('includes.header')
-</header>
+@include('includes.header')
 
 <body>
-<nav class="nav">
-    @include('includes.nav')
-</nav>
-
 <main>
     <h1>Вы можете связаться с нами по телефону 8(800)555-35-35, в ином случае заполните форму:</h1>
     <div class="support__form__container">
@@ -78,8 +72,8 @@
         </form>
     </div>
 </main>
-<footer>
+
     @include('includes.footer')
-</footer>
+
 </body>
 </html>
